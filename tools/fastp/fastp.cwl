@@ -26,13 +26,9 @@ arguments:
 inputs:
     fastq1:
       type: File
-      format:
-        - edam:format_1929 # FASTQ
       inputBinding:
         prefix: -i
     fastq2:
-      format:
-        - edam:format_1929 # FASTQ
       type: File?
       inputBinding:
         prefix: -I
@@ -61,17 +57,13 @@ inputs:
       inputBinding:
         prefix: --correction
 
-
-
 outputs:
     out_fastq1:
        type: File
-       format: $(inputs.fastq1.format)
        outputBinding:
            glob: $(inputs.fastq1.nameroot).fastp.fastq
     out_fastq2:
        type: File?
-       format: $(inputs.fastq2.format)
        outputBinding:
            glob: $(inputs.fastq2.nameroot).fastp.fastq
     html_report:
@@ -83,7 +75,6 @@ outputs:
       outputBinding:
         glob: fastp.json
 
-$namespaces:
-  edam: http://edamontology.org/
-$schemas:
-  - http://edamontology.org/EDAM_1.18.owl
+
+# Remember that there's a transformation defined in Schema salad reg the simplification of data type definitions. 
+# Type <T> ending with ? should be transformed to [<T>, "null"]. Type <T> ending with [] should be transformed to {"type": "array", "items": <T>}

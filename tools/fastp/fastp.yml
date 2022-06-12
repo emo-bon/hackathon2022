@@ -1,10 +1,11 @@
-$namespaces:
-  edam: http://edamontology.org/
+# $namespaces:
+#   edam: http://edamontology.org/
 
 fastq1:
   class: File
   path: ../../input_files/wgs-paired-SRR1620013_1.fastq.gz
   format: edam:format_1929
+
 fastq2:
   class: File
   path: ../../input_files/wgs-paired-SRR1620013_2.fastq.gz

@@ -1,0 +1,15 @@
+# The .yml file for the hack_wf.cwl script 
+# In the first part of the hands-on session, you will simply run the 2-step wf using this .yml file as is. 
+# In the second, you will have to edit it, to see how can tune a wf through such a file. 
+
+raw_data1:
+  class: File
+  path: input_files/wgs-paired-SRR1620013_1.fastq.gz
+
+raw_data2:
+  class: File
+  path: input_files/wgs-paired-SRR1620013_2.fastq.gz
+
+
+paired_reads_length_filter: 70
+
