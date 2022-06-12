@@ -1,0 +1,106 @@
+# Instructions for the hands-on session of the EMO BON hackathon 2022
+
+
+## Log in into the CCMAR HPC cluster
+
+To log in your student account, please open a terminal and run 
+
+```bash=
+    ssh ....
+```
+
+
+
+
+
+## Clone the GitHub repo to your home account 
+
+
+    git clone https://github.com/emo-bon/hackathon2022.git
+
+Once you have it, you may see what's there by moving into it and list files and folders. 
+
+    cd hackathon2022
+    ls
+
+In the `input_files` folder, you will find a partial metagenome sample. 
+There are 2 files as there is one with the forward and another with the reverse reads of the sample. 
+Apparently, this is a paired-end sample.
+
+Under the `tools/` folder, you will find 2 commonly known bioinformatics software: 
+    - [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for FastQ files
+    - [SeqPrep](https://github.com/jstjohn/SeqPrep): to merge paired end Illumina reads that are overlapping into a single longer read
+
+For each of these 2 software, you will find a folder, whith a `.cwl` and its corresponding `.yml` file. 
+
+
+Finally, the `hack_wf.cwl` and its `.yml` file 
+describe the 2-step workflow that we will run 
+invoking `fastp` and `SeqPrep`. 
+
+
+## Run a single tool 
+
+First, we will run a single tool. 
+
+Move into the `tools/` and then into the `fastp` folder.
+
+View the `.cwl` script and pay attention to the `CommandLineTool` flag in the `class` argument. 
+
+In the `hints` section, check the `DockerRequirement` flag 
+The `dockerPull` command gets the corresponding softwares through DockerHub. 
+
+> Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on DockerHub? 
+
+
+Then browse the `.yml` file and have a look into the arguments there. 
+
+> What about the `inputs` sections of the `.cwl` and the `.yml` content? 
+
+
+Now, let's run the `fastp` tool: 
+
+    cwltool fastp.cwl fastp.yml
+
+
+Once this is over, let's see the outcome! 
+
+    ls 
+    fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq
+
+> Can you get `fastp.html` on your local machine and browse it? 
+
+
+## Run the 2-step workflow 
+
+Move in the zero-level of the repo. 
+
+Let us now review the `hack_wf.cwl` script! 
+
+The class of this `.cwl` is `Workflow` and not a `CommandLineTool`. 
+
+An extra section is also present; in `steps` we have the 2 software tools 
+that are listed in the `tools/` folder. 
+
+> Can you see how the output of the `fastp` tool is provided as in input in the `SeqPrep` ? 
+
+Let us now run the workflow: 
+
+    cwltool hack_wf.cwl hack_wf.yml --outdir 2step-wf
+
+
+Once comlpeted, check on the output directory!
+
+
+## Edit the `.yml` script of the workflow and run again
+
+
+Multiple parameters can be set even in this short, 2-step workflow. 
+
+Durint the hands-on, we will discuss some of those and each one of you
+will edit a parameter. 
+
+Then we will run again the workflow and see what happens! 
+
+
+
