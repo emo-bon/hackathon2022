@@ -1,4 +1,4 @@
-# hackathon2022
+# IMBRSea hackathon2022
 
 ## The EMO BON project
 
