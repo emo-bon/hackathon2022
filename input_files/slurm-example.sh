@@ -13,3 +13,4 @@
 
 cd $SLURM_SUBMIT_DIR
 source ~/.bash_profile
+<put your command(s) here>
