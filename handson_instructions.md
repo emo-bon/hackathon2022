@@ -58,7 +58,7 @@ Then browse the `.yml` file and have a look into the arguments there.
 > What about the `inputs` sections of the `.cwl` and the `.yml` content? 
 
 
-Now, let's run the `fastp` tool. First add the following command line using the `nano` editor to the `input_files/slurm-example.sh` SLURM submission script: 
+Now, let's run the `fastp` tool. First add the following command (using the `nano` editor) to the `input_files/slurm-example.sh` SLURM submission script: 
 
     cwltool fastp.cwl fastp.yml
 
@@ -67,7 +67,7 @@ Next submit the job to the SLURM queue:
     sbatch slurm-example.sh
     (Note: you can monitor the progress of your job using the `squeue` command.)
 
-Once this is over, let's see the outcome! 
+Once the job is finished, let's see the outcome! 
 
     ls 
     fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq
