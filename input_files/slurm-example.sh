@@ -5,6 +5,7 @@
 #SBATCH --error=err
 #$BATCH --nodes=1
 #SBATCH --ntasks-per-node=1
+#SBATCH --nodelist=ceta4
 
 cd $SLURM_SUBMIT_DIR
 source ~/.bash_profile
