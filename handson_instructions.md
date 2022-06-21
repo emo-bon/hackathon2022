@@ -12,8 +12,8 @@ To log in your student account, please open a terminal and run
 
 ## Data Provenance
 
-    Throughtout this exercise, note down what provenance information (metadata) you would record so that it could be published with
-    the results. At the end of the session we will be a discussion of what should be included in the provenance metadata.
+Throughtout this exercise, note down what provenance information (metadata) you would record so that it could be published with
+the results. At the end of the session we will be a discussion of what should be included in the provenance metadata.
 
 
 ## Clone the GitHub repo to your home account 
