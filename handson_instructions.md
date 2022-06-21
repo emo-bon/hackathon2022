@@ -58,7 +58,7 @@ Then browse the `.yml` file and have a look into the arguments there.
 > What about the `inputs` sections of the `.cwl` and the `.yml` content? 
 
 
-Now, let's run the `fastp` tool. First add the following command line using the `nano` editor to the `slurm-example.sh` SLURM submission script: 
+Now, let's run the `fastp` tool. First add the following command line using the `nano` editor to the `input_files/slurm-example.sh` SLURM submission script: 
 
     cwltool fastp.cwl fastp.yml
 
@@ -88,7 +88,7 @@ that are listed in the `tools/` folder.
 
 > Can you see how the output of the `fastp` tool is provided as in input in the `SeqPrep` ? 
 
-Let us now run the workflow: 
+Let us now run the workflow. Write another SLUM queue submission script with the following command and submit it to the queue: 
 
     cwltool hack_wf.cwl hack_wf.yml --outdir 2step-wf
 
