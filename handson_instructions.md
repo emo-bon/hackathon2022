@@ -88,7 +88,7 @@ that are listed in the `tools/` folder.
 
 > Can you see how the output of the `fastp` tool is provided as in input in the `SeqPrep` ? 
 
-Let us now run the workflow. Write another SLUM queue submission script with the following command and submit it to the queue: 
+Let us now run the workflow. Write another SLURM queue submission script with the following command and submit it to the queue: 
 
     cwltool hack_wf.cwl hack_wf.yml --outdir 2step-wf
 
