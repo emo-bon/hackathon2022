@@ -16,6 +16,7 @@ Throughtout this exercise, note down what provenance information (metadata) you 
 the results. At the end of the session we will be a discussion of what should be included in the provenance metadata.
 
 
+
 ## Clone the GitHub repo to your home account 
 
 
