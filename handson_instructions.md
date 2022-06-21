@@ -97,7 +97,7 @@ Once comlpeted, check on the output directory!
 
 Multiple parameters can be set even in this short, 2-step workflow. 
 
-Durint the hands-on, we will discuss some of those and each one of you
+During the hands-on, we will discuss some of those and each one of you
 will edit a parameter. 
 
 Then we will run again the workflow and see what happens! 
