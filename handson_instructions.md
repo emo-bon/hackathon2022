@@ -6,7 +6,7 @@
 To log in your student account, please open a terminal and run 
 
 ```bash=
-    ssh ....
+    ssh <username>@ceta.ualg.pt
 ```
 
 
@@ -18,13 +18,13 @@ To log in your student account, please open a terminal and run
 
     git clone https://github.com/emo-bon/hackathon2022.git
 
-Once you have it, you may see what's there by moving into it and list files and folders. 
+Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
 
     cd hackathon2022
     ls
 
 In the `input_files` folder, you will find a partial metagenome sample. 
-There are 2 files as there is one with the forward and another with the reverse reads of the sample. 
+There are 2 files: one with the forward reads, and another with the reverse reads, of the sample. 
 Apparently, this is a paired-end sample.
 
 Under the `tools/` folder, you will find 2 commonly known bioinformatics software: 
@@ -51,7 +51,7 @@ In the `hints` section, check the `DockerRequirement` flag
 The `dockerPull` command gets the corresponding softwares through DockerHub. 
 
 > Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on DockerHub? 
-
+> 
 
 Then browse the `.yml` file and have a look into the arguments there. 
 
@@ -68,7 +68,7 @@ Once this is over, let's see the outcome!
     ls 
     fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq
 
-> Can you get `fastp.html` on your local machine and browse it? 
+> Can you download `fastp.html` to your local machine and open it in a web-browser? 
 
 
 ## Run the 2-step workflow 
