@@ -54,7 +54,7 @@ View the `.cwl` script using the `nano` editor and pay attention to the `Command
 In the `hints` section, check the `DockerRequirement` flag 
 The `dockerPull` command gets the corresponding softwares through DockerHub. 
 
-> Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on DockerHub? 
+> Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on [DockerHub](https://hub.docker.com)? 
 > 
 
 Then browse the `.yml` file and have a look into the arguments there. 
