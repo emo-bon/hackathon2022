@@ -74,10 +74,9 @@ Next submit the job to the SLURM queue:
 Once the job is finished, let's see the outcome! 
 
     ls 
-    fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq
+    fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq ...
 
-> Can you download `fastp.html` to your local machine and open it in a web-browser? 
-
+> Download `fastp.html` to your local machine and open it in a web-browser. 
 
 ## Run the 2-step workflow 
 
