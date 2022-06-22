@@ -19,4 +19,4 @@ disable_trim_poly_g: false
 
 force_polyg_tail_trimming: false
 
-threads: 8
+threads: 2
