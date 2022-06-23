@@ -69,7 +69,7 @@ Next submit the job to the [SLURM](https://slurm.schedmd.com/documentation.html)
 
 Once the job is finished, let's see the outcome! 
 
-    % ls 
+    $ ls 
     fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq ... etc
 
 Download `fastp.html` to your local machine using the secure-copy command `scp` and open it in a web-browser.
