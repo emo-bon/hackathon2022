@@ -55,12 +55,12 @@ Move to the `tools/fastp` directory.
 View the `.cwl` script using the `nano` editor and note the `CommandLineTool` flag in the `class` argument. 
 
 In the `hints` section, check the `DockerRequirement` flag.
-The `[dockerPull](https://docs.docker.com/engine/reference/commandline/pull/)` command fetches the corresponding software from DockerHub. 
+The [dockerPull](https://docs.docker.com/engine/reference/commandline/pull/) command fetches the corresponding software from DockerHub. 
 
 > Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on [DockerHub](https://hub.docker.com)? 
 > 
 
-Then browse the `.yml` file and have a look into the arguments there. 
+Then browse the `.yml` file and have a look at the arguments there. 
 
 > What about the `inputs` sections of the `.cwl` and the `.yml` content? NEED TO ASK A PROPER QUESTION HERE!!
 
