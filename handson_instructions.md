@@ -34,9 +34,10 @@ Navigate to the `input_files` folder where you will find a small metagenomic seq
 There are 2 files: one with the forward reads, and another with the reverse reads, of the sample. 
 This indicates that the data are from a [paried-end sequencing](https://www.illumina.com/science/technology/next-generation-sequencing/plan-experiments/paired-end-vs-single-read.html) Illumina sequencing experiment.
 
-Under the `tools` folder, you will find 2 commonly known bioinformatics software: 
-    - [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for FastQ files
-    - [SeqPrep](https://github.com/jstjohn/SeqPrep): to merge paired-end Illumina reads that are overlapping into a single longer read
+Under the `tools` folder, you will find 2 commonly known bioinformatics software:
+
+    - [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for [FastQ](https://en.wikipedia.org/wiki/FASTQ_format)  formatted sequence read files
+    - [SeqPrep](https://github.com/jstjohn/SeqPrep): to merge paired-end Illumina reads that are overlapping into a single longer read.
 
 For each of these 2 software, you will find a folder, within which is a [Common Workflow Language]( https://www.commonwl.org/) `.cwl` file and its corresponding [YAML](https://en.wikipedia.org/wiki/YAML)`.yml` configuration file. 
 
