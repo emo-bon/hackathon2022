@@ -53,7 +53,7 @@ First, we will run a single tool.
 
 Move to the `tools/fastp` directory.
 
-View the `.cwl` script using the `nano` editor and note the `CommandLineTool` flag in the `class` argument. 
+View the `.cwl` script using the `nano` editor and note the `CommandLineTool` flag in the `class` argument. (Note that the `^` character in `nano` signifies the CONTROL key.) 
 
 In the `hints` section, check the `DockerRequirement` flag.
 The [dockerPull](https://docs.docker.com/engine/reference/commandline/pull/) command fetches the corresponding software from DockerHub. 
