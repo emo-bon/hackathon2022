@@ -49,9 +49,7 @@ Finally, in the top-level directory you will find the `hack_wf.cwl` and its `.ym
 
 ## Running the `fastp` tool on its own 
 
-First, we will run a single tool. 
-
-Move to the `tools/fastp` directory.
+First, we will run a single tool. Navigate to the `tools/fastp` directory.
 
 View the `.cwl` script using the `nano` editor and note the `CommandLineTool` flag in the `class` argument. (Note that the `^` character in `nano` signifies the CONTROL key.) 
 
