@@ -47,7 +47,7 @@ Notice how the names of the parameters in the YAML configuration file correspond
 Finally, in the top-level directory you will find the `hack_wf.cwl` and its `.yml` file  which describe a 2-step workflow that we will run invoking `fastp` and `SeqPrep`. Take a look at these files and note how data flow in and out of first `fastp` then `SeqPrep`.
 
 
-## Run a single tool 
+## Running the `fastp` tool on its own 
 
 First, we will run a single tool. 
 
@@ -55,51 +55,42 @@ Move to the `tools/fastp` directory.
 
 View the `.cwl` script using the `nano` editor and note the `CommandLineTool` flag in the `class` argument. (Note that the `^` character in `nano` signifies the CONTROL key.) 
 
-In the `hints` section, check the `DockerRequirement` flag: the [dockerPull](https://docs.docker.com/engine/reference/commandline/pull/) command fetches the corresponding software from DockerHub. 
+In the `hints` section, check the `DockerRequirement` flag: the [dockerPull](https://docs.docker.com/engine/reference/commandline/pull/) command fetches the corresponding software from DockerHub. Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on [DockerHub](https://hub.docker.com)? 
 
-> Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on [DockerHub](https://hub.docker.com)? 
-> 
-
-Then browse the `.yml` file and have a look at the arguments there. 
-
-> What about the `inputs` sections of the `.cwl` and the `.yml` content? NEED TO ASK A PROPER QUESTION HERE!!
-
-
-Now, let's run the `fastp` tool. Copy the `input_files/slurm-example.sh` file to the current `fastp` folder. Using the `nano` editor, add the following command to `slurm-example.sh` file, give the job a 9 letter name, and saving the file as `slurm-fastp.sh`: 
+Now, let's run the `fastp` tool. Copy the `input_files/slurm-example.sh` file to the current `fastp` folder. Using the `nano` editor, add the following command to `slurm-example.sh` file, give the job a <9 letter name, and save the file as `slurm-fastp.sh`: 
 
     cwltool fastp.cwl fastp.yml
 
 Next submit the job to the SLURM queue:
 
-    sbatch slurm-fastp.sh
-    (Note: you can monitor the progress of your job using the `squeue` command.)
+    $ sbatch slurm-fastp.sh
+   
+(Note: you can monitor the progress of your job using the `squeue` command.)
 
 Once the job is finished, let's see the outcome! 
 
-    ls 
-    fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq ...
+    % ls 
+    fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq ... etc
 
-> Download `fastp.html` to your local machine and open it in a web-browser. 
+Download `fastp.html` to your local machine using the secure-copy command `scp` and open it in a web-browser.
+
+    $ scp <username>@ceta.ualg.pt:~/hackathon-test/hackathon2022/tools/fastp/fastp.html .
 
 ## Run the 2-step workflow 
 
-Move in the zero-level of the repo. 
+Move to the top-level directry of the repo. Let us now review the `hack_wf.cwl` script! 
 
-Let us now review the `hack_wf.cwl` script! 
+The class of this `.cwl` workflow is `Workflow` and not `CommandLineTool` that was used when we were only running a single software (e.g. in fastp.cwl). An extra section is also present; in `steps` we describe the 2 software tools that are in the `tools` folder. 
 
-The class of this `.cwl` is `Workflow` and not a `CommandLineTool`. 
-
-An extra section is also present; in `steps` we have the 2 software tools 
-that are listed in the `tools/` folder. 
-
-> Can you see how the output of the `fastp` tool is provided as in input in the `SeqPrep` ? 
+Can you see how the output of the `fastp` tool is provided as in input in the `SeqPrep` ? 
 
 Let us now run the workflow. Write another SLURM queue submission script with the following command and submit it to the queue: 
 
     cwltool --outdir 2step-wf hack_wf.cwl hack_wf.yml
 
+Once comlpeted, check the output directory!
 
-Once comlpeted, check on the output directory!
+NEED QUESTIONS...
 
 
 ## Edit the `.yml` script of the workflow and run again
