@@ -75,6 +75,3 @@ outputs:
       outputBinding:
         glob: fastp.json
 
-
-# Remember that there's a transformation defined in Schema salad reg the simplification of data type definitions. 
-# Type <T> ending with ? should be transformed to [<T>, "null"]. Type <T> ending with [] should be transformed to {"type": "array", "items": <T>}
