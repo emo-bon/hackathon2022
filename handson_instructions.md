@@ -29,7 +29,7 @@ Once you have downloaded the repo, you may see what's there by moving into it an
 
 In the `input_files` folder, you will find a partial metagenome sample. 
 There are 2 files: one with the forward reads, and another with the reverse reads, of the sample. 
-Apparently, this is a paired-end sample.
+This indicates that the data are from a [paried-end sequencing](https://www.illumina.com/science/technology/next-generation-sequencing/plan-experiments/paired-end-vs-single-read.html) experiment.
 
 Under the `tools/` folder, you will find 2 commonly known bioinformatics software: 
     - [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for FastQ files
