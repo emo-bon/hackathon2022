@@ -24,11 +24,11 @@ Use the [GIT version control system](https://git-scm.com/) to copy/clone the hac
 
     git clone https://github.com/emo-bon/hackathon2022.git
 
-<-- Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
+<--- Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
 
     cd hackathon2022
     ls
--->
+--->
 
 Navigate to the `input_files` folder where you will find a small metagenomic sequencing sample. 
 There are 2 files: one with the forward reads, and another with the reverse reads, of the sample. 
