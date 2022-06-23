@@ -38,7 +38,7 @@ Under the `tools` folder, you will find 2 commonly known bioinformatics software
     - [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for FastQ files
     - [SeqPrep](https://github.com/jstjohn/SeqPrep): to merge paired-end Illumina reads that are overlapping into a single longer read
 
-For each of these 2 software, you will find a folder, within which is a [Common Workflow Language]( https://www.commonwl.org/) `.cwl` file and its corresponding [YAML](https://en.wikipedia.org/wiki/YAML)`.yml` file. 
+For each of these 2 software, you will find a folder, within which is a [Common Workflow Language]( https://www.commonwl.org/) `.cwl` file and its corresponding [YAML](https://en.wikipedia.org/wiki/YAML)`.yml` configuration file. 
 
 
 Finally, in the top-level directory you will find the `hack_wf.cwl` and its `.yml` file 
