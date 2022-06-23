@@ -42,7 +42,7 @@ For each of these 2 software, you will find a folder, within which is a workflow
 
     $ more <filename>
 
-Notice how the names of the parameters in the YAML configuration file correspond the inputs of the workflow. Note also how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the orginal input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot).
+Notice how the names of the parameters in the YAML configuration file correspond to the inputs of the workflow. Note also how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the orginal input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot).
 
 Finally, in the top-level directory you will find the `hack_wf.cwl` and its `.yml` file 
 which describe a 2-step workflow that we will run 
