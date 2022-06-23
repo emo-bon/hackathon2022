@@ -70,12 +70,13 @@ Once the job is finished, let's see the outcome!
 Download `fastp.html` to your local machine using the secure-copy command `scp` and open it in a web-browser.
 
     $ scp <username>@ceta.ualg.pt:~/hackathon-test/hackathon2022/tools/fastp/fastp.html .
-    
-At the very bottom of the `fastp.html` web-page you will see the full command that was generated from the `.cwl` and `.yml` files; make sure you understand how the command was built.
+
 
 The results are also recorded in [JSON](https://www.json.org/json-en.html) format: `fastp.json`. JSON is a machine operable format and can be read and manipulated by programming languages. The following command extracts the command used to execute `fastp`:
 
     $ python3 -c "import json; print(json.load(open('fastp.json'))['command'])"
+    
+Make sure you undestand how the command was built from the `.cwl` and `.yml` files.
 
 ## Run the 2-step workflow 
 
