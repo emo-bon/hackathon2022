@@ -70,6 +70,8 @@ Once the job is finished, let's see the outcome!
 Download `fastp.html` to your local machine using the secure-copy command `scp` and open it in a web-browser.
 
     $ scp <username>@ceta.ualg.pt:~/hackathon-test/hackathon2022/tools/fastp/fastp.html .
+    
+At the very bottom of the `fastp.html` web-page you will see the full command that was generated from the `.cwl` and `.yml` files; make sure you understand how the command was built.
 
 ## Run the 2-step workflow 
 
