@@ -3,7 +3,7 @@
 
 ## Log in into the CCMAR HPC cluster
 
-To log in your student account, please open a terminal and run 
+To log in to your account, please open a terminal and run 
 
 ```bash=
     ssh <username>@ceta.ualg.pt
