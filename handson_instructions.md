@@ -38,7 +38,7 @@ Under the `tools` folder, you will find 2 commonly known bioinformatics software
 - [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for [FastQ](https://en.wikipedia.org/wiki/FASTQ_format)  formatted sequence read files
 - [SeqPrep](https://github.com/jstjohn/SeqPrep): to merge paired-end Illumina reads that are overlapping into a single longer read.
 
-For each of these 2 software, you will find a folder, within which is a [Common Workflow Language]( https://www.commonwl.org/) `.cwl` file and its corresponding [YAML](https://en.wikipedia.org/wiki/YAML)`.yml` configuration file. Take a look at the contents of these files using the `more` command:
+For each of these 2 software, you will find a folder, within which is a [Common Workflow Language]( https://www.commonwl.org/) `.cwl` file and its corresponding [YAML](https://en.wikipedia.org/wiki/YAML)`.yml` configuration file. Take a look at the contents of these files using the `more` command (use the spacebar to display more of the file when necessary):
 
     $ more <filename>
 
