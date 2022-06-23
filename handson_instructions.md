@@ -6,7 +6,7 @@
 To log in your student account, please open a terminal and run 
 
 ```bash=
-    ssh <username>@ceta.ualg.pt
+    ssh ibmrseaXX@ceta.ualg.pt
 ```
 
 
