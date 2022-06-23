@@ -19,7 +19,7 @@ the results. At the end of the session we will have a discussion of what should 
 
 ## Clone the emo-bon/Hackathon2022 GitHub repository
 
-Use the [GIT version control system](https://git-scm.com/){:target="_blank"} to copy/clone the hackathon data to your home directory:
+Use the [GIT version control system](https://git-scm.com/) to copy/clone the hackathon data to your home directory:
 
 
     $ git clone https://github.com/emo-bon/hackathon2022.git
