@@ -41,8 +41,8 @@ Under the `tools` folder, you will find 2 commonly known bioinformatics software
 For each of these 2 software, you will find a folder, within which is a [Common Workflow Language]( https://www.commonwl.org/) `.cwl` file and its corresponding [YAML](https://en.wikipedia.org/wiki/YAML)`.yml` file. 
 
 
-Finally, the `hack_wf.cwl` and its `.yml` file 
-describe the 2-step workflow that we will run 
+Finally, in the top-level directory you will find the `hack_wf.cwl` and its `.yml` file 
+which describe a 2-step workflow that we will run 
 invoking `fastp` and `SeqPrep`. 
 
 
