@@ -1,6 +1,11 @@
 # Instructions for the hands-on session of the EMO BON hackathon 2022
 
 
+## Data Provenance
+
+Throughtout this exercise, note down what provenance information (metadata) you would record so that it could be published with
+the results. At the end of the session we will have a discussion of what should be included in the provenance metadata.
+
 ## Log in into the CCMAR HPC cluster
 
 To log in to your account, please open a terminal and run 
@@ -8,14 +13,6 @@ To log in to your account, please open a terminal and run
 ```bash=
     ssh <username>@ceta.ualg.pt
 ```
-
-
-## Data Provenance
-
-Throughtout this exercise, note down what provenance information (metadata) you would record so that it could be published with
-the results. At the end of the session we will have a discussion of what should be included in the provenance metadata.
-
-
 
 ## Clone the emo-bon/Hackathon2022 GitHub repository
 
