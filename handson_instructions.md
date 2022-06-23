@@ -61,7 +61,7 @@ Now, let's run the `fastp` tool. Copy the `input_files/slurm-example.sh` file to
 
     cwltool fastp.cwl fastp.yml
 
-Next submit the job to the SLURM queue:
+Next submit the job to the [SLURM](https://slurm.schedmd.com/documentation.html) queue:
 
     $ sbatch slurm-fastp.sh
    
