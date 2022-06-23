@@ -24,7 +24,7 @@ Use the [GIT version control system](https://git-scm.com/) to copy/clone the hac
 
     git clone https://github.com/emo-bon/hackathon2022.git
 
-<--- Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
+<!--- Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
 
     cd hackathon2022
     ls
