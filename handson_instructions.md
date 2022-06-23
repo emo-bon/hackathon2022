@@ -73,7 +73,7 @@ Download `fastp.html` to your local machine using the secure-copy command `scp` 
     
 At the very bottom of the `fastp.html` web-page you will see the full command that was generated from the `.cwl` and `.yml` files; make sure you understand how the command was built.
 
-Download the [JSON](https://www.json.org/json-en.html) file to your local machine. JSON is a machine operable format and can be read and manipulated by programming languages. The following command extracts the command used to execute `fastp`:
+Download the [JSON](https://www.json.org/json-en.html) file `fastp.json` to your local machine. JSON is a machine operable format and can be read and manipulated by programming languages. The following command extracts the command used to execute `fastp`:
 
     $ python3 -c "import json; print(json.load(open('fastp.json'))['command'])"
 
