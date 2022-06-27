@@ -66,7 +66,7 @@ Once the job is finished, let's see the outcome!
     $ ls 
     fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq ... etc
 
-Open a new terminal and download `fastp.html` to your local machine using the secure-copy command `scp` and open it in a web-browser.
+Open a new terminal and download `fastp.html` to your local machine using the secure-copy command `scp` (or any other file transfer sotfware you have installed) and open it in a web-browser.
 
     $ scp <username>@ceta.ualg.pt:~/hackathon-test/hackathon2022/tools/fastp/fastp.html .
 
