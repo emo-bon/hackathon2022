@@ -3,8 +3,7 @@
 
 ## Data Provenance
 
-Throughtout this exercise, note down what provenance information (metadata) you would record so that it could be published with
-the results. At the end of the session we will have a discussion of what should be included in the provenance metadata.
+Throughout this exercise, note down the provenance information (metadata) that you think is relevant for each step. At the end of the session we will have a discussion of what should be included in the provenance metadata for the outputs of the workflow that are published/shared with others.
 
 ## Log in into the CCMAR HPC cluster
 
