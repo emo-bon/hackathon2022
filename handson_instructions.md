@@ -27,27 +27,27 @@ Use the [GIT version control system](https://git-scm.com/) to copy/clone the hac
 --->
 
 Navigate to the `input_files` folder where you will find a small metagenomic sequencing sample. 
-There are 2 files: one with the forward reads, and another with the reverse reads, of the sample. 
+There are two files: one with the forward reads, and another with the reverse reads, of the sample. 
 This indicates that the data are from a [paried-end sequencing](https://www.illumina.com/science/technology/next-generation-sequencing/plan-experiments/paired-end-vs-single-read.html) Illumina sequencing experiment.
 
-Under the `tools` folder, you will find 2 commonly known bioinformatics software:
-- [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for [FastQ](https://en.wikipedia.org/wiki/FASTQ_format)  formatted sequence read files
+Under the `tools` folder, you will find two commonly-known bioinformatics software:
+- [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for [FastQ](https://en.wikipedia.org/wiki/FASTQ_format) formatted sequence read files
 - [SeqPrep](https://github.com/jstjohn/SeqPrep): to merge paired-end Illumina reads that are overlapping into a single longer read.
 
-For each of these 2 software, you will find a folder, within which is a workflow written in the [Common Workflow Language]( https://www.commonwl.org/) `.cwl` file and its corresponding [YAML](https://en.wikipedia.org/wiki/YAML)`.yml` configuration file. Take a look at the contents of these files using the `more` command (use the spacebar to display more of the file when necessary):
+For each of these pieces of software, you will find a folder: within which is a workflow written in the [Common Workflow Language]( https://www.commonwl.org/) in a file with a `.cwl` extension, and a corresponding [YAML](https://en.wikipedia.org/wiki/YAML) `.yml` configuration file. Take a look at the contents of these files using the `more` command (use the spacebar to display more of the file when necessary and `q` to quit):
 
     $ more <filename>
 
-Notice how the names of the parameters in the YAML configuration file correspond to the inputs of the workflow. Note also how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the orginal input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
+You can see that the two input files that are in the `input_files` folder are described in the YAML configuration file. Note how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the original input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
 
-Finally, in the top-level directory you will find the `hack_wf.cwl` and its `.yml` file  which describe a 2-step workflow that we will run invoking `fastp` and `SeqPrep`. Take a look at these files and note how data flow in and out of first `fastp` then `SeqPrep`.
+Finally, in the top-level directory (called `hackathon2022`) you will find the files `hack_wf.cwl` and its `.yml` file: these describe the two-step workflow that we will run in this hackathon, and which will invoke the software `fastp` and `SeqPrep`. Take a look at these files and note how data flow in and out of first `fastp` then `SeqPrep`.
 
 
 ## Running the `fastp` tool on its own 
 
 First, we will run a single tool. Navigate to the `tools/fastp` directory.
 
-View the `.cwl` script using the `nano` editor and note the `CommandLineTool` flag in the `class` argument. (Note that the `^` character in `nano` signifies the CONTROL key.) 
+View the `.cwl` script using the `nano` editor and note the `CommandLineTool` flag in the `class` argument at the very top of the file. (Note that the `^` character in `nano` signifies the CONTROL key.) 
 
 In the `hints` section, check the `DockerRequirement` flag: the [dockerPull](https://docs.docker.com/engine/reference/commandline/pull/) command fetches the corresponding software from DockerHub. Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on [DockerHub](https://hub.docker.com)? 
 
@@ -75,21 +75,20 @@ The results are also recorded in [JSON](https://www.json.org/json-en.html) forma
 
     $ python3 -c "import json; print(json.load(open('fastp.json'))['command'])"
     
-Make sure you undestand how the command was built from the `.cwl` and `.yml` files.
+Make sure you understand how the command was built from the `.cwl` and `.yml` files.
 
-## Run the 2-step workflow 
+## Run the two-step workflow 
 
-Move to the top-level directry of the repo. Let us now review the `hack_wf.cwl` script! 
+Move to the top-level directry (hackathon2022). Let us review the `hack_wf.cwl` script there. 
 
-The class of this `.cwl` workflow is `Workflow` and not `CommandLineTool` that was used when we were only running a single software (e.g. in fastp.cwl). An extra section is also present; in `steps` we describe the 2 software tools that are in the `tools` folder. 
-
-Can you see how the output of the `fastp` tool is provided as in input in the `SeqPrep` ? 
+The class of this `.cwl` workflow is `Workflow` and not `CommandLineTool` that was used when we were only running a single software (e.g. in fastp.cwl). An extra section is present in this CWL file; in the section `steps` we invoke the two pieces of software that are in the `tools` folder. 
+   * Can you see how the output of the `fastp` tool is provided as in input in the `SeqPrep` ? 
 
 Let us now run the workflow. Write another SLURM queue submission script with the following command and submit it to the queue: 
 
     cwltool --outdir 2step-wf hack_wf.cwl hack_wf.yml
 
-Once comlpeted, check the output directory!
+Once completed, check the output directory!
 
 NEED QUESTIONS...
 
