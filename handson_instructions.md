@@ -38,7 +38,11 @@ For each of these pieces of software, you will find a folder: within which is a 
 
     $ more <filename>
 
-You can see that the two input files that are in the `input_files` folder are described in the YAML configuration file. Note how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the original input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
+You can see that the two input files that are in the `input_files` folder are described in the YAML configuration file. 
+
+<!--- Haris to explain
+Note how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the original input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
+--->
 
 Finally, in the top-level directory (called `hackathon2022`) you will find the files `hack_wf.cwl` and its `.yml` file: these describe the two-step workflow that we will run in this hackathon, and which will invoke the software `fastp` and `SeqPrep`. Take a look at these files and note how data flow in and out of first `fastp` then `SeqPrep`.
 
