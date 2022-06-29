@@ -72,7 +72,7 @@ Once the job is finished, let's see the outcome!
 
 Open a new terminal and download `fastp.html` to your local machine using the secure-copy command `scp` (or any other file transfer sotfware you have installed) and open it in a web-browser.
 
-    $ scp <username>@ceta.ualg.pt:~/hackathon-test/hackathon2022/tools/fastp/fastp.html .
+    $ scp <username>@ceta.ualg.pt:~/hackathon2022/tools/fastp/fastp.html .
 
 
 The results are also recorded in [JSON](https://www.json.org/json-en.html) format: `fastp.json`. JSON is a machine operable format and can be read and manipulated by programming languages. The following command extracts the command used to execute `fastp`:
