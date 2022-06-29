@@ -94,8 +94,6 @@ Let us now run the workflow. Write another SLURM queue submission script with th
 
 Once completed, check the output directory!
 
-NEED QUESTIONS...
-
 
 ## Edit the `.yml` script of the workflow and run again
 
