@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=<add a nine alphanumeric name here>
+#SBATCH --job-name=<replace this comment with a max. 9 char name>
 #SBATCH --partition=all
 #SBATCH --output=out
 #SBATCH --error=err
@@ -9,4 +9,4 @@
 
 cd $SLURM_SUBMIT_DIR
 source ~/.bash_profile
-<put your command(s) here>
+<replace this comment with your command(s)>
