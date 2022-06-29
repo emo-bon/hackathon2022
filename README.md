@@ -24,12 +24,12 @@ This hackathon is intended to emphasise the broad concepts of data management an
 
 ## Links to presentations and the hands-on instructions
 
-- [Introduction]() by [Cymon Cox](https://www.ccmar.ualg.pt/users/cymon) (5')
+- Introduction by [Cymon Cox](https://www.ccmar.ualg.pt/users/cymon) (5')
 - [What is the EMBRC/EMO BON?](https://docs.google.com/presentation/d/1jnq0UVorBwhv4zQnXcJGINr3mX2mo-OMca5rUW1rXsg/edit#slide=id.g13a86ba458f_2_36) by [Ioulia Santi](https://imbbc.hcmr.gr/user/isanti/) (10')
 - [Open Science principles and data provenance](https://docs.google.com/presentation/d/1wJTvFuhTtFfAQ7AR7OXo0lPzYUG54M0vddUIn2-NgrA/edit?usp=sharing) by [Katrina Exter](https://www.vliz.be/en/imis?persid=35548) (30')
 - [Workflows and containerisation, and how to use them effectively](https://docs.google.com/presentation/d/1yP4MZ7S8DXM8hPwb5MLmVIeQOccmoU3W_A-xVlUFgGQ/edit?usp=sharing) by [Haris Zafeiropoulos](https://imbbc.hcmr.gr/user/charis-zaf/) (~15')
 - [Hands-on](https://github.com/emo-bon/hackathon2022/blob/main/handson_instructions.md) by Haris/Gianluca remotely, Cymon, Bruno, Joao on site (~3h)
-- [Wrap-up]() by [Cymon Cox](https://www.ccmar.ualg.pt/users/cymon) (15')
+- Wrap-up by [Cymon Cox](https://www.ccmar.ualg.pt/users/cymon) (15')
 <!-- Exercises - workflow, containerisation, HPC -  - 3 hours -->
 
 
