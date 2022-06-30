@@ -5,7 +5,7 @@ Not everyone will complete the Hands-on exercise at the same pace; so this addit
 Log in to `ceta.ualg.pt` as before, if you are not already connected. Previously, we submitted our work to the SLURM queue using a script that specifies how the job is run - this is the typical way of doing work on an HPC. However, it is also possible to open up an interactive session on one of the compute nodes, which is what we will do in this exercise. Execute the following command, which will open a session on compute node ceta4:
 
 ```
-$ srun -w ceta4 -N 1 -n 1 --pty bash -i
+srun -w ceta4 -N 1 -n 1 --pty bash -i
 
 ```
 
@@ -74,7 +74,7 @@ Now we are going to build the new `fastp` image and give it a unique name (a tag
 
 ```
 # This command automatically looks for a `Dockerfile`:
-$ docker build -t fastp-<your name> .
+docker build -t fastp-<your name> .
 e.g.
     docker build --no-cache -t fastp-cymon .
 
@@ -85,14 +85,14 @@ It will take a few minutes to build the new image. The `--no-cache` command forc
 Once the image is built, you can issue the following command to see the new image in the local Docker repository:
 
 ```
-$ docker images
+docker images
 
 ```
 
 You can check that the your new `fastp` Docker image works by issuing the following command that displays the `fastp` help information:
 
 ```
-$ docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> --help
+docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> --help
 
 ```
 The last command is a bit complex: `-it` means run interactibly if needed; `--rm` means remove the running container after the command has executed; `-w "$PWD:$PWD"` attaches the current working directory to the running container so that data/files can be passed in and out of the container; `-w $PWD` specifies the current directory as the working directroy; and finally we envoke the new `fastp` image and run the command "--help"
@@ -102,14 +102,14 @@ Because the new fastp container only `sees` the current working directory and no
 Here we copy the raw sequence reads data files to the current directory so that we can feed them into the conatiner.
 
 ```
-$ cp ../input_files/wgs-paired-SRR1620013_* .
+cp ../input_files/wgs-paired-SRR1620013_* .
 
 ```
 
 OK, so we are ready to execute the same 'fastp' command as we previously did with the `fastp.cwl` workflow (remember to specify your named image):
 
 ```
-$ docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> \
+docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> \
     -i wgs-paired-SRR1620013_1.fastq.gz \
     -I wgs-paired-SRR1620013_2.fastq.gz \
     -o wgs-paired-SRR1620013_1.fastq.fastp.fastq \
