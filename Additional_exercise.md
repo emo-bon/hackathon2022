@@ -95,7 +95,7 @@ You can check that the your new `fastp` Docker image works by issuing the follow
 $ docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> --help
 
 ```
-The last command is a bit complex: `-it` means run interactibly if needed; `--rm` means remove the running container after the command has executed; `-w "$PWD:$PWD"` attaches the current working directory to the running container so that data/files can be passed in and out of the container; `-w $PWD` specifies the current directory as the working directroy; and finally we envoke the new `fastp` imagen and run the command "--help"
+The last command is a bit complex: `-it` means run interactibly if needed; `--rm` means remove the running container after the command has executed; `-w "$PWD:$PWD"` attaches the current working directory to the running container so that data/files can be passed in and out of the container; `-w $PWD` specifies the current directory as the working directroy; and finally we envoke the new `fastp` image and run the command "--help"
 
 Because the new fastp container only `sees` the current working directory and not the entire directory tree, all the data files needed to execute the command must be in the current working directory (see `v "$PWD:$PWD" -w "$PWD"` in the above command).
 
