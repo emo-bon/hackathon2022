@@ -67,7 +67,26 @@ RUN  apk add --no-cache --update autoconf \
 ENV LD_LIBRARY_PATH /usr/lib64
 # This next command defines the command that is issued when the image is run:
 ENTRYPOINT ["fastp"]
+
 ```
+
+Now we are going to build the new `fastp` image and give it a unique name (a tag) - use you own name so that you can identify the image in the local repository:
+
+```
+# This command automatically looks for a `Dockerfile`:
+$ docker build -t fastp-<your name here> .
+
+```
+
+It will take a few minutes to build the new image.
+
+Once the image is built, you can issue the following command to see the new image in the local Docker repository:
+
+```
+$ docker images
+
+```
+
 
 
 
