@@ -12,7 +12,7 @@ srun -w ceta4 -N 1 -n 1 --pty bash -i
 Your prompt should now say `@ceta4 ~]` instead of `@ceta ~]`
 
 ## More about Docker
-In the [fastp tool workflow](tools/fastp/fastp.cwl) we use previously, the following command downloaded the [fastp Docker image](https://hub.docker.com/r/microbiomeinformatics/pipeline-v5.fastp), which as part of `pipeline-v5` from the [microbiomeinformatics](https://hub.docker.com/u/microbiomeinformatics) repositiory on [DockerHub](https://hub.docker.com/): 
+In the [fastp tool workflow](tools/fastp/fastp.cwl) we used previously, the following command downloaded the [fastp Docker image](https://hub.docker.com/r/microbiomeinformatics/pipeline-v5.fastp), which as part of `pipeline-v5` from the [microbiomeinformatics](https://hub.docker.com/u/microbiomeinformatics) repositiory on [DockerHub](https://hub.docker.com/): 
 
 ```
 hints:
