@@ -117,7 +117,7 @@ docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> \
     
 ```
 
-Check the output and compare it to the workflow output; they might differ since theis was done with an update software version.
+Check the output and compare it to the workflow output; they might differ since this was done with a newer software version.
 
 How would you change the [fastp.cwl](https://github.com/emo-bon/hackathon2022/blob/main/tools/fastp/fastp.cwl) workflow to use your new local `fastp` image?
 
