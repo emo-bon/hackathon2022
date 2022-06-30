@@ -70,15 +70,15 @@ ENTRYPOINT ["fastp"]
 
 ```
 
-Now we are going to build the new `fastp` image and give it a unique name (a tag) - use you own name so that you can identify the image in the local repository:
+Now we are going to build the new `fastp` image and give it a unique name (a tag) - use you own name so that you can identify the image in the local repository. The `docker build` command autotmatically looks for a file named `Dockerfile` in the current directory:
 
 ```
-# This command automatically looks for a `Dockerfile`:
 docker build -t fastp-<your name> .
-e.g.
-    docker build --no-cache -t fastp-cymon .
 
 ```
+
+(`e.g. docker build --no-cache -t fastp-cymon .`)
+
 
 It will take a few minutes to build the new image. The `--no-cache` command forces Docker to rebuild the image from new, rather than use an image that one of your fellow students may have already built. 
 
