@@ -99,7 +99,7 @@ The last command is a bit complex: `-it` means run interactibly if needed; `--rm
 
 Because the new fastp container only `sees` the current working directory and not the entire directory tree, all the data files needed to execute the command must be in the current working directory (see `v "$PWD:$PWD" -w "$PWD"` in the above command).
 
-Here we copy the raw sequence read to the current directory so that we can feed them into the conatiner.
+Here we copy the raw sequence reads data files to the current directory so that we can feed them into the conatiner.
 
 ```
 $ cp ../input_files/wgs-paired-SRR1620013_* .
