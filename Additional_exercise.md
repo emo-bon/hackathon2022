@@ -74,7 +74,9 @@ Now we are going to build the new `fastp` image and give it a unique name (a tag
 
 ```
 # This command automatically looks for a `Dockerfile`:
-$ docker build -t fastp-<your name here> .
+$ docker build -t fastp-<your name> .
+e.g.
+    docker build -t fastp-cymon .
 
 ```
 
@@ -93,9 +95,31 @@ You can check that the your new `fastp` Docker image works by issuing the follow
 $ docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> --help
 
 ```
-The last command is a bit complex: `it` means run interactibly if needed; --rm means remove the running container after the command has executed; `-w "$PWD:$PWD"` attaches the current working directory to the running container so that data/files can be passed into the container, and results files can be saved here as output; finally we envoke the new `fastp` imagen and run the command "--help"
+The last command is a bit complex: `-it` means run interactibly if needed; `--rm` means remove the running container after the command has executed; `-w "$PWD:$PWD"` attaches the current working directory to the running container so that data/files can be passed in and out of the container; `-w $PWD` specifies the current directory as the working directroy; and finally we envoke the new `fastp` imagen and run the command "--help"
 
+Because the new fastp container only `sees` the current working directory and not the entire directory tree, all the data files needed to execute the command must be in the current working directory (see `v "$PWD:$PWD" -w "$PWD"` in the above command).
 
+Here we copy the raw sequence read to the current directory so that we can feed them into the conatiner.
+
+```
+$ cp ../input_files/wgs-paired-SRR1620013_* .
+
+```
+
+OK, so we are ready to execute the same 'fastp' command as we previously did with the `fastp.cwl` workflow (remember to specify your named image):
+
+```
+$ docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> \
+    -i wgs-paired-SRR1620013_1.fastq.gz \
+    -I wgs-paired-SRR1620013_2.fastq.gz \
+    -o wgs-paired-SRR1620013_1.fastq.fastp.fastq \
+    -O wgs-paired-SRR1620013_2.fastq.fastp.fastq \
+    --length_required 70 \
+    --thread 2
+    
+```
+
+Check the output and compare it to the workflow output; they should be the same!
 
 
 
