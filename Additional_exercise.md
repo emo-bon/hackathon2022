@@ -76,11 +76,11 @@ Now we are going to build the new `fastp` image and give it a unique name (a tag
 # This command automatically looks for a `Dockerfile`:
 $ docker build -t fastp-<your name> .
 e.g.
-    docker build -t fastp-cymon .
+    docker build --no-cache -t fastp-cymon .
 
 ```
 
-It will take a few minutes to build the new image.
+It will take a few minutes to build the new image. The `--no-cache` command forces Docker to rebuild the image from new, rather than use an image that one of your fellow students may have already built. 
 
 Once the image is built, you can issue the following command to see the new image in the local Docker repository:
 
