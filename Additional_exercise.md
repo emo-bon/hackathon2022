@@ -20,7 +20,7 @@ hints:
         dockerPull: microbiomeinformatics/pipeline-v5.fastp:0.20.0
 ```
 
-In fact, what happens is that the image is downloaded only once and stored in a local Docker repository. Each time Docker is required to use an image it first looks in this repository for the requested image, and only if it is missing will it then download it from DockerHub (or whatever repository is specified). This obviouisly same a lot of unnecessary bandwidth and time in repeating the download.
+In fact, what happens is that the image is downloaded only once and stored in a local Docker repository. Each time Docker is required to use an image it first looks in this repository for the requested image, and only if it is missing will it then download it from DockerHub (or whatever repository is specified). This obviously saves a lot of unnecessary bandwidth and time in repeating the download.
 
 In this exercise, intead of using the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` container image obtained from DockerHub, we are going to build our own Docker container image for `fastp` using the source code, and perform the same analysis as was done by the [fastp tool workflow](tools/fastp/fastp.cwl).
 
