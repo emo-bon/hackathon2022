@@ -22,7 +22,8 @@ hints:
 
 In fact, what happens is that the image is downloaded only once and stored in a local Docker repository. Each time Docker is required to use an image it first looks in this repository for the requested image, and only if it is missing will it then download it from DockerHub (or whatever repository is specified). This obviously saves a lot of unnecessary bandwidth and time in repeating the download.
 
-In this exercise, intead of using the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` container image obtained from DockerHub, we are going to build our own Docker container image for `fastp` using the source code, and perform the same analysis as was done by the [fastp tool workflow](tools/fastp/fastp.cwl).
+In this exercise, intead of using the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` container image obtained from DockerHub, we are going to build our own Docker container image for `fastp` using the source code, and perform the same analysis as was done by the [fastp tool workflow](tools/fastp/fastp.cwl). You might want to do this if the verion of the software you want to use doesn't have a Docker image: in fact the `fastp` version that is used by the workflow from DockerHub is `v.0.20.0` whereas `v0.23.2` was released in December 2021, six months ago at the time of writing.
+
 
 Navigate to the `hackathon22/Docker` directory. Here you will find a file called `Dockerfile` which describes how to build the Docker container image for `fastp`. Note that by convention, all Docker image building scripts are named just `Dockerfile`.
 
