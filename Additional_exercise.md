@@ -104,7 +104,7 @@ cp ../input_files/wgs-paired-SRR1620013_* .
 
 ```
 
-OK, so we are ready to execute the same 'fastp' command as we previously did with the `fastp.cwl` workflow (remember to specify your named image):
+OK, so we are ready to execute the same `fastp` command as we previously did with the `fastp.cwl` workflow (remember to specify your named image):
 
 ```
 docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> \
