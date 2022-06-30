@@ -87,6 +87,15 @@ $ docker images
 
 ```
 
+You can check that the your new `fastp` Docker image works by issuing the following command that displays the `fastp` help information:
+
+```
+$ docker run -it --rm -v "$PWD:$PWD" -w "$PWD" fastp-<your name> --help
+
+```
+The last command is a bit complex: `it` means run interactibly if needed; --rm means remove the running container after the command has executed; `-w "$PWD:$PWD"` attaches the current working directory to the running container so that data/files can be passed into the container, and results files can be saved here as output; finally we envoke the new `fastp` imagen and run the command "--help"
+
+
 
 
 
