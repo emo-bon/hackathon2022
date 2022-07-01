@@ -20,7 +20,7 @@ The analytical workflows used by EMO BON will be introduced and the basic concep
 
 Participants will run and edit a simple workflow written in the Common Workflow Language for genomics data analysis, package it into a “run anywhere” Docker container, and execute it on a High-Performance Computing cluster. 
 
-This hackathon is intended to emphasise the broad concepts of data management and bioinformatic analyses of genomic data.
+This hackathon is intended to emphasise the broad concepts of data management and bioinformatic analyses of genomic data. Some basic UNIX commands you will need can be found [here](Commands_Cheatsheet.md).
 
 ## Links to presentations and the hands-on instructions
 
