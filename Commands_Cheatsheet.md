@@ -1,7 +1,7 @@
 ## Just a few notes on LINUX/UNIX commands you will need...
 
 - `pwd` - display present working directory
-- `cd <dir_name>` - change directory to <dir_name>
+- `cd <dir_name>` - change to the `<dir_name>` directory
 - `ls ` - list directory contents
 
 - `ls -al` - list directory contents and file permissions, sizes etc
