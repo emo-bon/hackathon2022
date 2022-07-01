@@ -78,7 +78,7 @@ docker build -no-cache -t fastp-<your name> .
 
 ```
 
-`e.g. docker build --no-cache -t fastp-cymon .` It will take a few minutes to build the new image. The `--no-cache` command forces Docker to rebuild the image from new, rather than use an image that may have already been built by one of your fellow students. 
+`e.g. docker build --no-cache -t fastp-alice .` It will take a few minutes to build the new image. The `--no-cache` command forces Docker to rebuild the image from new, rather than use an image that may have already been built by one of your fellow students. 
 
 Once the image is built, you can issue the following command to see the new image in the local Docker repository:
 
