@@ -4,9 +4,10 @@
 
 - `ls -al` - list directory contents and file permissions, sizes etc
 
-- `mv <name1> <name2>` - if <name1> is a file, and <name2> is not a directory, <name1> will be renamed to <name2>
-                     - if <name1> is a file, and <name2> is a directory, <name1> will be more into the directory <name2>
-                     - if <name1> is a directory, and <name2> is a directory, <name2> directory will be moved into directory <name2>
+- `mv <name1> <name2>` 
+   - if `<name1>` is a file, and `<name2>` is not a directory, `<name1>` will be renamed to `<name2>`
+   - if `<name1>` is a file, and `<name2>` is a directory, `<name1>` will be more into the directory `<name2>`
+   - if `<name1>` is a directory, and `<name2>` is a directory, `<name2>` directory will be moved into directory `<name2>`
 
 - `cp <name1> <name2>` - copy <name1> to <name2>
 
