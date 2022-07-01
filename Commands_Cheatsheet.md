@@ -1,5 +1,6 @@
 ## Just a few notes on LINUX/UNIX commands you will need...
 
+- `pwd` - display present working directory
 - `ls ` - list directory contents
 
 - `ls -al` - list directory contents and file permissions, sizes etc
