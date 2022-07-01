@@ -14,6 +14,6 @@
 - `mkdir <name>` - make a directory named `<name>`
 
 - `scp <source> <destination>` secure copy (between machines) a source file or directory to a destination directory
-  - e.g. `scp <user1>@machine1.domain.com:~/<file1> .` - secure copy the file named <file1> in the /home directory of the user named <user1> on the computer at the DNS address `machine1.domain.com` to the curent directory `.` (period specifies the current directory the command is being issued in)
+  - e.g. `scp <user1>@machine1.domain.com:~/<file1> .` secure copy the file named `<file1>` in the /home directory of the user named `<user1>` on the computer at the DNS address `machine1.domain.com` to the curent directory `.` (period specifies the current directory the command is being issued in)
   
   
