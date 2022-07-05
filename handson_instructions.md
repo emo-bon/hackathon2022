@@ -38,19 +38,23 @@ Navigate to the `input_files` folder where you will find a small metagenomic seq
 There are two files: one with the forward reads, and another with the reverse reads, of the sample. 
 This indicates that the data are from a [paried-end sequencing](https://www.illumina.com/science/technology/next-generation-sequencing/plan-experiments/paired-end-vs-single-read.html) Illumina sequencing experiment.
 
-Under the `tools` folder, you will find two commonly-known bioinformatics software:
+Under the `hackathon22/tools` folder, you will find two commonly-known bioinformatics software:
 - [fastp](https://github.com/OpenGene/fastp): for fast, all-in-one preprocessing for [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format) formatted sequence read files
 - [SeqPrep](https://github.com/jstjohn/SeqPrep): to merge paired-end Illumina reads that are overlapping into a single longer read.
 
-For each of these pieces of software, you will find a folder: within which is a workflow written in the [Common Workflow Language]( https://www.commonwl.org/) in a file with a `.cwl` extension, and a corresponding [YAML](https://en.wikipedia.org/wiki/YAML) `.yml` configuration file. Take a look at the contents of these files using the `gunzip` and the `more` commands 
+For each of these pieces of software, you will find a folder: within which is a workflow written in the [Common Workflow Language]( https://www.commonwl.org/) in a file with a `.cwl` extension, and a corresponding [YAML](https://en.wikipedia.org/wiki/YAML) `.yml` configuration file. Take a look at the contents of these files using the `more` command:
+
+    $ more <filename>
+
+Under the [`hackathon22/input_files`](https://github.com/emo-bon/hackathon2022/tree/main/input_files) folder you can see that the two data input files that are are described in the YAML configuration file.
+
+Take a look at the contents of these files using the `gunzip` and the `more` commands 
 (use the spacebar to display more of the file when necessary and `q` to quit):
 
     $ gunzip <filename>
     $ more <filename>
 
-You can see that the two input files that are in the [`input_files`](https://github.com/emo-bon/hackathon2022/tree/main/input_files) folder are described in the YAML configuration file. 
-
-Remember to compress the file you are looking at using the `gzip` command
+When, you have finished looking at the files, you need to re-compress them using the `gzip` command
 
     $ gzip <filename>
 
@@ -58,7 +62,7 @@ Remember to compress the file you are looking at using the `gzip` command
 Note how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the original input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
 --->
 
-Under the `Docker` folder there is a `Dockerfile` that will be discussed later. 
+Under the `Docker` folder there is a `Dockerfile` that will be discussed later (maybe!). 
 
 Finally, in the top-level directory (called `hackathon2022`) you will find the files [`hack_wf.cwl`](https://github.com/emo-bon/hackathon2022/blob/main/hack_wf.cwl) and its corresponding [`.yml`](https://github.com/emo-bon/hackathon2022/blob/main/hack_wf.yml) file: 
 these describe the two-step workflow that we will run in this hackathon, 
