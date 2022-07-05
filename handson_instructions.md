@@ -13,9 +13,16 @@ To log in to your account, please open a terminal and run
     ssh <username>@ceta.ualg.pt
 ```
 
+Once you are logged in, you may check your present working directory and what is in there: 
+
+    $ pwd
+    $ /home/<username>
+    $ ls
+    $
+
 ## Clone the emo-bon/Hackathon2022 GitHub repository
 
-Use the [GIT version control system](https://git-scm.com/) to copy/clone the hackathon data to your home directory:
+Use the [GIT version control system](https://git-scm.com/) to copy/clone the `hackathon2022` repository to your home directory:
 
 
     $ git clone https://github.com/emo-bon/hackathon2022.git
@@ -24,6 +31,8 @@ Once you have downloaded the repo, you may see what's there by moving into it an
 
     $ cd hackathon2022
     $ ls
+    $ Additional_exercise.md  Commands_Cheatsheet.md  Docker  hack_wf.cwl  hack_wf.yml  handson_instructions.md  input_files  README.md  slurm-example.sh  tools
+
 
 Navigate to the `input_files` folder where you will find a small metagenomic sequencing sample. 
 There are two files: one with the forward reads, and another with the reverse reads, of the sample. 
