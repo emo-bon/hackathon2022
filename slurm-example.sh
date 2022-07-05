@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #SBATCH --job-name=<replace this comment with a max. 9 char name>
 #SBATCH --partition=all
