@@ -101,7 +101,7 @@ Next submit the job to the [SLURM](https://slurm.schedmd.com/documentation.html)
 
     $ sbatch slurm-fastp.sh
    
-(Note: you can monitor the progress of your job using the `squeue` command.)
+(Note: you can monitor the progress of your job using the `squeue` command - but it will only take ~10 seconds.)
 
 Once the job is finished, let's see the outcome! 
 
