@@ -55,7 +55,7 @@ View the `.cwl` script using the `nano` editor and note the `CommandLineTool` fl
 
 In the `hints` section, check the `DockerRequirement` flag: the [dockerPull](https://docs.docker.com/engine/reference/commandline/pull/) command fetches the corresponding software from DockerHub. Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image on [DockerHub](https://hub.docker.com)? 
 
-Now, let's run the `fastp` tool. Copy the `input_files/slurm-example.sh` file to the current `fastp` folder. Using the `nano` editor, add the following command to `slurm-example.sh` file, give the job a <9 letter name, and save the file as `slurm-fastp.sh`: 
+Now, let's run the `fastp` tool. Copy the `slurm-example.sh` file to the current `fastp` folder. Using the `nano` editor, add the following command to `slurm-example.sh` file, give the job a <9 letter name, and save the file as `slurm-fastp.sh`: 
 
     cwltool fastp.cwl fastp.yml
 
