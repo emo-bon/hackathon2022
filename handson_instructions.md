@@ -93,7 +93,7 @@ Copy the [`slurm-example.sh`](https://github.com/emo-bon/hackathon2022/blob/main
     $ cp slurm-example.sh tools/fastp/slurm-fastp.sh
     $ cd tools/fastp/
 
-Using the `nano` editor, add the following command to the `slurm-fastp.sh` file to give the job a <9 letter name: 
+Using the `nano` editor, add the following command to the `slurm-fastp.sh` file and give the job a <9 letter name: 
 
     cwltool fastp.cwl fastp.yml
 
