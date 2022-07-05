@@ -18,7 +18,7 @@ The use of standardised descriptions of data provenance and other metadata (data
 
 The analytical workflows used by EMO BON will be introduced and the basic concepts of how to write workflows (analysis pipelines) and how to execute them in a containerised environment will be described. 
 
-Participants will run and edit a simple workflow written in the Common Workflow Language for genomics data analysis, package it into a “run anywhere” Docker container, and execute it on a High-Performance Computing cluster. 
+Participants will run and edit a simple workflow written in the Common Workflow Language for genomics data analysis and execute it on a High-Performance Computing cluster. An additional exercise will describe how to package one of the tools into a Docker container image.
 
 This hackathon is intended to emphasise the broad concepts of data management and bioinformatic analyses of genomic data. Some basic UNIX commands you will need can be found [here](Commands_Cheatsheet.md).
 
