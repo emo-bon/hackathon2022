@@ -15,23 +15,23 @@ To log in to your account, please open a terminal and run
 
 Once you are logged in, you may check your present working directory and what is in there: 
 
-    $ pwd
-    $ /home/<username>
-    $ ls
-    $
+    pwd
+    /home/<username>
+    ls
+    
 
 ## Clone the emo-bon/Hackathon2022 GitHub repository
 
 Use the [GIT version control system](https://git-scm.com/) to copy/clone the `hackathon2022` repository to your home directory:
 
 
-    $ git clone https://github.com/emo-bon/hackathon2022.git
+    git clone https://github.com/emo-bon/hackathon2022.git
 
 Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
 
-    $ cd hackathon2022
-    $ ls
-    $ Additional_exercise.md  Commands_Cheatsheet.md  Docker  hack_wf.cwl  hack_wf.yml  handson_instructions.md  input_files  README.md  slurm-example.sh  tools
+    cd hackathon2022
+    ls
+    Additional_exercise.md  Commands_Cheatsheet.md  Docker  hack_wf.cwl  hack_wf.yml  handson_instructions.md  input_files  README.md  slurm-example.sh  tools
 
 
 Navigate to the `input_files` folder where you will find a small metagenomic sequencing sample. 
@@ -44,19 +44,19 @@ Under the `hackathon22/tools` folder, you will find two commonly-known bioinform
 
 For each of these pieces of software, you will find a folder: within which is a workflow written in the [Common Workflow Language]( https://www.commonwl.org/) in a file with a `.cwl` extension, and a corresponding [YAML](https://en.wikipedia.org/wiki/YAML) `.yml` configuration file. Take a look at the contents of these files using the `more` command:
 
-    $ more <filename>
+    more <filename>
 
 Under the [`hackathon22/input_files`](https://github.com/emo-bon/hackathon2022/tree/main/input_files) folder you can see that the two data input files that are are described in the YAML configuration file.
 
 Take a look at the contents of these files using the `gunzip` and the `more` commands 
 (use the spacebar to display more of the file when necessary and `q` to quit):
 
-    $ gunzip <filename>
-    $ more <filename>
+    gunzip <filename>
+    more <filename>
 
 When, you have finished looking at the files, you need to re-compress them using the `gzip` command
 
-    $ gzip <filename>
+    gzip <filename>
 
 <!--- Haris to explain
 Note how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the original input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
@@ -89,33 +89,33 @@ Can you find the `microbiomeinformatics/pipeline-v5.fastp:0.20.0` Docker image o
 Now, let's run the `fastp` tool. 
 Copy the [`slurm-example.sh`](https://github.com/emo-bon/hackathon2022/blob/main/slurm-example.sh) file to the current [`fastp`](https://github.com/emo-bon/hackathon2022/tree/main/tools/fastp) folder, giving it a specific name for the specific job to run:
 
-    $ # current working directory is the top level of the repo, i.e. /home/<username>/hackathon2022
-    $ cp slurm-example.sh tools/fastp/slurm-fastp.sh
-    $ cd tools/fastp/
+    # current working directory is the top level of the repo, i.e. /home/<username>/hackathon2022
+    cp slurm-example.sh tools/fastp/slurm-fastp.sh
+    cd tools/fastp/
 
 Using the `nano` editor, add the following command to the `slurm-fastp.sh` file and give the job a <9 letter name: 
 
-    cwltool fastp.cwl fastp.yml
+   cwltool fastp.cwl fastp.yml
 
 Next submit the job to the [SLURM](https://slurm.schedmd.com/documentation.html) queue:
 
-    $ sbatch slurm-fastp.sh
+     sbatch slurm-fastp.sh
    
 (Note: you can monitor the progress of your job using the `squeue` command - but it will only take ~10 seconds.)
 
 Once the job is finished, let's see the outcome! 
 
-    $ ls 
+     ls 
     fastp.html  fastp.json wgs-paired-SRR1620013_1.fastq.fastp.fastq  wgs-paired-SRR1620013_2.fastq.fastp.fastq ..
 
 Open a new terminal and download `fastp.html` to your local machine using the secure-copy command `scp` (or any other file transfer sotfware you have installed) and open it in a web-browser.
 
-    $ scp <username>@ceta.ualg.pt:~/hackathon2022/tools/fastp/fastp.html .
+    scp <username>@ceta.ualg.pt:~/hackathon2022/tools/fastp/fastp.html .
 
 
 The results are also recorded in [JSON](https://www.json.org/json-en.html) format: `fastp.json`. JSON is a machine operable format and can be read and manipulated by programming languages. The following command extracts the command used to execute `fastp`:
 
-    $ python3 -c "import json; print(json.load(open('fastp.json'))['command'])"
+    python3 -c "import json; print(json.load(open('fastp.json'))['command'])"
     
 Make sure you understand how the command was built from the `.cwl` and `.yml` files.
 
@@ -132,7 +132,7 @@ Let us now run the workflow. Write another SLURM queue submission script with th
 
     cwltool --outdir 2step-wf hack_wf.cwl hack_wf.yml
 
-Once completed, check the output directory!
+The job will take ~20secs, once completed, check the output directory!
 
 
 ## Edit the `.yml` script of the workflow and run again
