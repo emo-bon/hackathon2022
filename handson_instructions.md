@@ -1,4 +1,4 @@
-# Instructions for the hands-on session of the EMO BON hackathon 2022
+# Instructions for the hands-on session of the DUTH msc class 2025
 
 
 ## Data Provenance
