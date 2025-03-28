@@ -1,38 +1,23 @@
 # Instructions for the hands-on session of the DUTH msc class 2025
 
 
-## Data Provenance
+## Dependencies
 
-Throughout this exercise, note down the provenance information (metadata) that you think is relevant for each step. At the end of the session we will have a discussion of what should be included in the provenance metadata for the outputs of the workflow that are published/shared with others.
+When running on the codespace, the only thing we will have to get that is not there already, is `cwltool`.
 
-## Log in into the CCMAR HPC cluster
+To do so, you may just run in the console:
 
-To log in to your account, please open a terminal and run 
+    pip install cwltool
 
-```bash=
-    ssh <username>@ceta.ualg.pt
-```
+To make sure you got it, simply run 
 
-Once you are logged in, you may check your present working directory and what is in there: 
+    cwltool --version
 
-    pwd
-    /home/<username>
-    ls
-    
-
-## Clone the emo-bon/Hackathon2022 GitHub repository
-
-Use the [GIT version control system](https://git-scm.com/) to copy/clone the `hackathon2022` repository to your home directory:
+To perform these short scripts locally, you would have to go through several installation steps. 
+I will try to provide you a script to do so in the near future. 
 
 
-    git clone https://github.com/emo-bon/hackathon2022.git
-
-Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
-
-    cd hackathon2022
-    ls
-    Additional_exercise.md  Commands_Cheatsheet.md  Docker  hack_wf.cwl  hack_wf.yml  handson_instructions.md  input_files  README.md  slurm-example.sh  tools
-
+## Input files
 
 Navigate to the `input_files` folder where you will find a small metagenomic sequencing sample. 
 There are two files: one with the forward reads, and another with the reverse reads, of the sample. 
@@ -58,9 +43,7 @@ When, you have finished looking at the files, you need to re-compress them using
 
     gzip <filename>
 
-<!--- Haris to explain
-Note how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the original input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
---->
+
 
 Under the `Docker` folder there is a `Dockerfile` that will be discussed later (maybe!). 
 
@@ -96,6 +79,9 @@ Copy the [`slurm-example.sh`](https://github.com/emo-bon/hackathon2022/blob/main
 Using the `nano` editor, add the following command to the `slurm-fastp.sh` file and give the job a <9 letter name: 
 
    cwltool fastp.cwl fastp.yml
+
+> Note how the prefix names (e.g. `wgs-paired-SRR1620013_1`) of the output files are taken from the original input sequence files described in the YAML file through a name variable (e.g. `$(inputs.fastq1.nameroot`).
+
 
 Next submit the job to the [SLURM](https://slurm.schedmd.com/documentation.html) queue:
 
@@ -145,5 +131,25 @@ will edit a parameter.
 
 Then we will run again the workflow and see what happens! 
 
+
+
+## Clone the emo-bon/Hackathon2022 GitHub repository
+
+Working on a codespace is cool for some parts, but in real world, most of the times it's neccessary to develop locally. 
+
+Thus, to do on your actual machine what we'll be doing on the codespace, you will have to:
+
+1. get the code locally
+2. install a number of dependencies we'll be using here (and thanks to the codespace are already there fore you)
+
+Use the [GIT version control system](https://git-scm.com/) to copy/clone the `hackathon2022` repository to your home directory:
+
+    git clone https://github.com/emo-bon/hackathon2022.git
+
+Once you have downloaded the repo, you may see what's there by moving into it and listing the files and folders. 
+
+    cd hackathon2022
+    ls
+    Additional_exercise.md  Commands_Cheatsheet.md  Docker  hack_wf.cwl  hack_wf.yml  handson_instructions.md  input_files  README.md  slurm-example.sh  tools
 
 
